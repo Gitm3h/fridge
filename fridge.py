@@ -1,21 +1,24 @@
-import unittest
-from fridge import evaluate
+def evaluate(contents, food):
+    if contents == food:
+        print("Yes, it's all food!!!")
+        return True
+    else:
+        print("That's not all of the food, or there is still something you shouldn't eat!!!")
+        return False
 
-# This fails, WTF?
+def fridge():
+    print("Welcome to the fridge")
 
-class FridgeTests(unittest.TestCase):
-    def test_evaluate(self):
-        result = evaluate(["a","b"], ["a", "b"])
-        self.assertTrue(result)
-
-if __name__ == '__main__':
-    unittest.main()
-
-
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)  # add assertion here
+    # "emmental" could also be a cheese, in the future
+    contents = ["Cheese", "Butter", "Peas", "Milk"]
+    shopping_list = ["Cheese", "Butter", "Milk", "Eggs", "Salami", "Lettuce"]
+    print("You have in your fridge:\n")
+    print(contents)
+    for x in contents:
+        print(x)
 
 
-if __name__ == '__main__':
-    unittest.main()
+if __name__ == "__main__":
+    fridge()
+
+
