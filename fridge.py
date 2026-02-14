@@ -1,3 +1,4 @@
+# Not used at the moment, but there for the test example
 def evaluate(contents, food):
     if contents == food:
         print("Yes, it's all food!!!")
@@ -13,7 +14,6 @@ def fridge():
     contents = ["Cheese", "Butter", "Peas", "Milk"]
     shopping_list = ["Cheese", "Butter", "Milk", "Eggs", "Salami", "Lettuce"]
     print("You have in your fridge:\n")
-    print(contents)
     for x in contents:
         print(x)
 
