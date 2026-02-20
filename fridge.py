@@ -17,11 +17,12 @@ def fridge():
     contents = ["Cheese", "Butter", "Peas", "Milk"]
     shopping_list = ["Cheese", "Butter", "Milk", "Eggs", "Salami", "Lettuce"]
     print("You have in your fridge:\n")
-    for x in contents:
-        print(x)
+    def loop(x):
+        for x in x:
+            print(x)
+    loop(contents)
     print("You still need:\n")
-    for x in shopping_list:
-        print(x)
+    loop(shopping_list)
     a = str(input("Enter an item: "))
     b = str(input("Enter another item: "))
     if a in contents and b in contents:
