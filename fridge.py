@@ -1,43 +1,54 @@
+contents = ["Emmental", "Butter", "Peas", "Milk", "Bread"]
+
+
 # Not used at the moment, but there for the test example
-def evaluate(contents, shopping_list, combine_foods): #homework 2 hint:  def evaluate(contents, first, second):  then replace the body of the function
-    if contents == True:
-        print("Guten Apetit!!!")
-        return True
-    else:
-        print("There's nothing to eat!!!")
-        return False
+def evaluate(contents, first, second):  # then replace the body of the function
+  a = first
+  b = second
+  if a and b in contents:
+    print(f"The sum of {a} and {b} is {a}{b.lower()}")
+    return 2
+  if a not in contents:
+    print(f"You don't have {a}, but you do have {b}" )
+    return 1
+  if b not in contents:
+    print(f"You do not have {b}, which would go well with {a}") 
+    return 1 
+  print(f"You do not have either {a} nor {b}. Go shopping?") 
+  return 0
 
-def loop(x):
-    for x in x:
-        print(x)
+def print_list(x):
+  for x in x:
+      print(x)
 
-def combine_foods(a, b):
-    return a + b
+
+def eating_sesh(score):
+  a = str(input("\nEnter an item: "))
+  b = str(input("Enter another item: "))
+  score += evaluate(contents, a, b)
+  return score
 
 def fridge():
-    print("Welcome to the fridge")
-    print("You currently have:\n")
+  print("Welcome to the fridge")
+  score: int = 0
 
-    # "emmental" could also be a cheese, in the future
-    contents = ["Emmental", "Butter", "Peas", "Milk", "Bread"]
-    loop(contents)
-    print ("You still need:\n")
-    shopping_list = ["Cheddar", "Mushrooms", "Honey", "Eggs", "Salami", "Lettuce"]
-    loop(shopping_list)
-    a = str(input("Enter an item: "))
-    b = str(input("Enter another item: "))
-    if a and b in contents:
-        print(f"The sum of {a} and {b} is {combine_foods(a, b.lower())}")
-    elif a not in contents:
-      print(f"You don't have {a}, but you do have {b}" )
-    if b not in contents:
-        print(f"You do not have {b}, which would go well with {a}")  
-    else:
-        print(f"You do not have either {a} nor {b}. Go shopping?")  
+  print("You currently have:\n")
+  # "emmental" could also be a cheese, in the future
+  print_list(contents)
+  print ("You still need:\n")
+  shopping_list = ["Cheddar", "Mushrooms", "Honey", "Eggs", "Salami", "Lettuce"]
+  print_list(shopping_list)
 
-#'homework 1': The printing of the lists repeats. Can you turn that into a function that both can use? Done
-#'homework 2': See 'evaluate()' above? Can you replace that with what you are evaluating in fridge()? Maybe done?
-#'homework 3': Can you update the fridge_test.py to test the new evaluate()?
+  while score <5:
+    score = eating_sesh(score)
+    print(f"Score: {score}")
+
+  print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!  YOU WON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")  
+  exit(0)
+    
+
+#'homework 1': Can you update the fridge_test.py to test the evaluate()'s return values (no need to test the prints)?
+#'homework 2': Let's allow the player to lose as well. How would you implement that?
 
 if __name__ == "__main__":
     fridge()
