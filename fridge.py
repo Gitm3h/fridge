@@ -35,7 +35,7 @@ def fridge():
   print("You currently have:\n")
   # "emmental" could also be a cheese, in the future
   print_list(contents)
-  print ("You still need:\n")
+  print ("\nYou still need:\n")
   shopping_list = ["Cheddar", "Mushrooms", "Honey", "Eggs", "Salami", "Lettuce"]
   print_list(shopping_list)
 
