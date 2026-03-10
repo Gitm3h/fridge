@@ -3,15 +3,16 @@ contents = ["Emmental", "Butter", "Peas", "Milk", "Bread"]
 
 # Not used at the moment, but there for the test example
 def evaluate(contents, first, second):  # then replace the body of the function
-  a = first
-  b = second
-  if a and b in contents:
-    print(f"The sum of {a} and {b} is {a}{b.lower()}")
+  a = first.lower()
+  b = second.lower()
+  lowercase_contents = [food.lower() for food in contents]   # Or you can do other funny stuff: [food + "is spoiled" for food in contents]
+  if (a in lowercase_contents) and (b in lowercase_contents):
+    print(f"The sum of {a} and {b} is {a}{b}")
     return 2
-  if a not in contents:
+  if (a not in lowercase_contents) and (b in lowercase_contents):
     print(f"You don't have {a}, but you do have {b}" )
     return 1
-  if b not in contents:
+  if (b not in lowercase_contents) and (a in lowercase_contents):
     print(f"You do not have {b}, which would go well with {a}") 
     return 1 
   print(f"You do not have either {a} nor {b}. Go shopping?") 
